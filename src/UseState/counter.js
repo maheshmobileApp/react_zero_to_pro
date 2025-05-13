@@ -6,7 +6,7 @@
 //initialValue is the initial state value.
 //state is the current state value.
 //setState is a function that allows you to update the state value.
-import React, { use, useState } from 'react';
+import React, { useState } from 'react';
 const CounterComponent = () => {
     //const [state, setState] = useState(initialValue)
     const [count,setCount] = useState(0);
