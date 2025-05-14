@@ -1,9 +1,11 @@
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { Button, TextField, Box, Card, CardContent, Typography, FormControlLabel, Checkbox, Link } from '@mui/material';
 
 const LoginScreen = () => {
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -12,7 +14,14 @@ const LoginScreen = () => {
 
     const onSubmit = (data) => {
         console.log(data);
+        navigate('/dashboard');
     };
+
+    const signUpAction = () => {
+        console.log('sign up action');
+        navigate('/signup');
+
+    }
 
     return (
         <Box sx={{
@@ -27,7 +36,7 @@ const LoginScreen = () => {
             <Card
                 sx={{
                     width: '350px',
-                    height: '350px',
+                    height: '450px',
                     padding: 3,
                     boxShadow: 3,
                     borderRadius: 3
@@ -99,6 +108,18 @@ const LoginScreen = () => {
                         >
                             Login
                         </Button>
+                        <Button
+                            variant='contained'
+                            onClick={signUpAction}
+                            fullWidth
+                            sx={{
+                                mt: 2,
+                                borderRadius: 2
+                            }}
+                        >
+                            Sign Up
+                        </Button>
+
                         <Typography
                          align='center'
                          variant='body2'
@@ -106,8 +127,8 @@ const LoginScreen = () => {
                             mt: 2
                          }}
                         >
-                            <Link>
-                               ```` Forgot password?````
+                            <Link href="/forgot" underline="hover">
+                                Forgot password?
                                 </Link>
                         </Typography>
 
