@@ -12,8 +12,10 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from 'react-router-dom';
+import { useThemeContext } from '../ThemeContext';
 
 const SignUp = () => {
+  const { theme } = useThemeContext
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -44,7 +46,7 @@ const SignUp = () => {
       justifyContent="center"
       alignItems="center"
       minHeight="100vh"
-      bgcolor="#f5f5f5"
+      bgcolor={theme === 'light' ? '#f0f0f0' : '#121212'}
     >
       <Card sx={{ width: 400, p: 2 }}>
         <CardContent>

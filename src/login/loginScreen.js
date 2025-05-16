@@ -3,8 +3,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { Button, TextField, Box, Card, CardContent, Typography, FormControlLabel, Checkbox, Link } from '@mui/material';
-
+import { useThemeContext } from '../ThemeContext';
 const LoginScreen = () => {
+    const { theme } = useThemeContext();
     const navigate = useNavigate();
     const {
         register,
@@ -30,7 +31,7 @@ const LoginScreen = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#f0f0f0',
+            backgroundColor: theme === 'light' ? '#121212' : '#f0f0f0',
             flexDirection: 'column',
         }}>
             <Card

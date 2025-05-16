@@ -10,7 +10,7 @@ const UserDataComponent = () => {
         <div>
             <h1>User Data Component</h1>
             {/* // step 4 : provide the context value */}
-            <UserContext.Provider value={user}> 
+                <UserContext.Provider value={user}> 
                 <ParentComponent />
                 </UserContext.Provider>
         </div>)
